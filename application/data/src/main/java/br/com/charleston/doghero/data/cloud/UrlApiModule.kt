@@ -10,6 +10,6 @@ open class UrlApiModule {
     @Provides
     @Named(URL_DOMAIN)
     open fun provideUrl(): String {
-        return "http://charleston.us-2.evennode.com/"
+        return "https://raw.githubusercontent.com/charleston10/dog-hero-android/master/api/"
     }
 }

@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface HeroesApi {
 
-    @GET("v1/heroes")
+    @GET("myheroes.txt")
     fun getMyHeroes(): Observable<DataResponse>
 }
