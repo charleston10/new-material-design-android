@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_search"
+          android:icon="@drawable/ic_launcher_background"
+          android:title="Buscar"/>
+
+    <item android:id="@+id/menu_messages"
+          android:icon="@drawable/ic_launcher_background"
+          android:title="Mensagens"/>
+
+    <item android:id="@+id/menu_heroes"
+          android:icon="@drawable/ic_launcher_background"
+          android:title="Heróis"/>
+
+    <item android:id="@+id/menu_"
+          android:icon="@drawable/ic_launcher_background"
+          android:title="Reservas"/>
+
+    <item android:id="@+id/menu_config"
+          android:icon="@drawable/ic_launcher_background"
+          android:title="Menu"/>
+</menu>
