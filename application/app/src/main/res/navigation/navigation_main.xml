@@ -6,7 +6,7 @@
             app:startDestination="@id/myHeroesFragment">
 
     <fragment android:id="@+id/myHeroesFragment"
-              android:name="br.com.charleston.doghero.features.MyHeroesFragment"
+              android:name="br.com.charleston.doghero.features.heroes.screens.MyHeroesFragment"
               android:label="MyHeroesFragment"
               tools:layout="@layout/fragment_my_heroes"/>
 </navigation>
