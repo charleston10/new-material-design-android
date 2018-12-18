@@ -1,8 +1,8 @@
-package br.com.charleston.doghero.data.repository.datasource.cloud
+package br.com.charleston.doghero.domain.repository
 
 import br.com.charleston.doghero.domain.model.DataHeroesModel
 import io.reactivex.Observable
 
-interface IHeroCloudDataStore {
+interface IHeroRepository {
     fun getHeroes(): Observable<DataHeroesModel>
 }

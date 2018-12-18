@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import br.com.charleston.doghero.core.base.Injectable
 import br.com.charleston.doghero.di.AppComponent
 import br.com.charleston.doghero.di.DaggerAppComponent
-import br.com.charleston.doghero.di.Injectable
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

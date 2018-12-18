@@ -4,13 +4,12 @@ import br.com.charleston.doghero.data.cloud.requests.HeroesApi
 import br.com.charleston.doghero.data.cloud.responses.mapper.HeroCloudMapper
 import br.com.charleston.doghero.data.repository.HeroDataRepository
 import br.com.charleston.doghero.data.repository.datasource.cloud.HeroCloudDataStore
-import br.com.charleston.doghero.domain.repository.HeroRepository
+import br.com.charleston.doghero.domain.repository.IHeroRepository
 import dagger.Module
 import dagger.Provides
 
 @Module
 class HeroModule {
-
 
     @Provides
     fun cloudMapper(): HeroCloudMapper {
@@ -28,7 +27,7 @@ class HeroModule {
     @Provides
     fun questionDataRepository(
         cloud: HeroCloudDataStore
-    ): HeroRepository {
+    ): IHeroRepository {
         return HeroDataRepository(cloud)
     }
 }

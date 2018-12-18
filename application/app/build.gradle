@@ -69,6 +69,10 @@ android {
 }
 
 dependencies {
+    implementation project(':core')
+    implementation project(':domain')
+    implementation project(':data')
+
     def libCore = rootProject.ext.coreDependencies
     implementation libCore.kotlin
     implementation libCore.billing

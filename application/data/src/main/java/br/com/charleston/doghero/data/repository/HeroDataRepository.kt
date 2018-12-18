@@ -1,15 +1,15 @@
 package br.com.charleston.doghero.data.repository
 
-import br.com.charleston.doghero.domain.repository.HeroRepository
 import br.com.charleston.doghero.data.repository.datasource.cloud.HeroCloudDataStore
-import br.com.charleston.doghero.domain.model.HeroModel
+import br.com.charleston.doghero.domain.model.DataHeroesModel
+import br.com.charleston.doghero.domain.repository.IHeroRepository
 import io.reactivex.Observable
 
 class HeroDataRepository(
     private val cloudDataStore: HeroCloudDataStore
-) : HeroRepository {
+) : IHeroRepository {
 
-    override fun getHeroes(): Observable<List<HeroModel>> {
+    override fun getHeroes(): Observable<DataHeroesModel> {
         return cloudDataStore.getHeroes()
     }
 }

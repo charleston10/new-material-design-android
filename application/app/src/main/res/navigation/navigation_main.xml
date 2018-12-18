@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_main"
+            app:startDestination="@id/myHeroesFragment">
+
+    <fragment android:id="@+id/myHeroesFragment"
+              android:name="br.com.charleston.doghero.features.MyHeroesFragment"
+              android:label="MyHeroesFragment"
+              tools:layout="@layout/fragment_my_heroes"/>
+</navigation>
