@@ -5,5 +5,5 @@ import java.io.Serializable
 
 data class DataResponse(
     @SerializedName("recents") val recents: List<HeroResponse>,
-    @SerializedName("recents") val favorites: List<HeroResponse>
+    @SerializedName("favorites") val favorites: List<HeroResponse>
 ) : Serializable
