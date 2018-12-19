@@ -9,6 +9,8 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
             android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -50,40 +52,46 @@
                     tools:text="Vila Mariana"/>
 
             <LinearLayout
-                    android:gravity="center"
+                    android:gravity="start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                 <ImageView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star_big_on"
                         tools:srcCompat="@android:drawable/btn_star_big_on"/>
 
                 <ImageView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star_big_on"
                         tools:srcCompat="@android:drawable/btn_star_big_on"/>
 
                 <ImageView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star_big_on"
                         tools:srcCompat="@android:drawable/btn_star_big_on"/>
 
                 <ImageView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star_big_on"
                         tools:srcCompat="@android:drawable/btn_star_big_on"/>
 
                 <ImageView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star_big_on"
                         tools:srcCompat="@android:drawable/btn_star_big_on"/>
 
                 <TextView
+                        android:layout_gravity="center_vertical"
                         android:id="@+id/neighbor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="(415)"/>
+                        android:text="(415)"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -98,11 +106,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                    android:layout_gravity="center"
                     android:visibility="@{hero.superHero ? View.VISIBLE : View.GONE}"
                     android:id="@+id/ic_heart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:srcCompat="@android:drawable/ic_menu_manage"/>
+                    android:src="@drawable/icon_like_filled_vector_red"/>
 
             <TextView
                     android:id="@+id/price"

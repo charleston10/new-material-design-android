@@ -1,8 +1,11 @@
 package br.com.charleston.doghero.features.heroes.screens
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,8 +22,10 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindToolbar()
         observerViewModel()
         fetchData()
+        bindRefreshLayout()
     }
 
     override fun getLayoutId(): Int {
@@ -61,6 +66,15 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
         }
     }
 
+    private fun bindToolbar() {
+        getViewDataBinding().toolbar.apply {
+            title = "Meus Heróis"
+        }
+
+        (activity as AppCompatActivity)
+            .setSupportActionBar(getViewDataBinding().toolbar)
+    }
+
     private fun bindItems(items: List<HeroData>) {
         getViewDataBinding().listHeroes.apply {
             adapter = HeroesAdapter(context, items)
@@ -68,12 +82,18 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
         }
     }
 
+    private fun bindRefreshLayout() {
+        getViewDataBinding().refreshLayout.setOnRefreshListener { fetchData() }
+    }
+
     private fun showLoading() {
         getViewDataBinding().isLoading = true
+        getViewDataBinding().refreshLayout.isRefreshing = true
     }
 
     private fun hideLoading() {
         getViewDataBinding().isLoading = false
+        getViewDataBinding().refreshLayout.isRefreshing = false
     }
 
     private fun showError() {
