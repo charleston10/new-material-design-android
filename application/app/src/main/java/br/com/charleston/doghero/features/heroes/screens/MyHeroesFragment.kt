@@ -13,6 +13,7 @@ import br.com.charleston.doghero.core.base.BaseFragment
 import br.com.charleston.doghero.databinding.FragmentMyHeroesBinding
 import br.com.charleston.doghero.domain.model.HeroModel
 import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
+import br.com.charleston.doghero.features.heroes.adapters.LastSpaceItemDecoration
 import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
@@ -81,6 +82,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
         getViewDataBinding().listHeroes.apply {
             adapter = HeroesAdapter(context, items)
             layoutManager = LinearLayoutManager(context)
+            addItemDecoration(LastSpaceItemDecoration())
         }
     }
 
