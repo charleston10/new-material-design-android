@@ -7,7 +7,7 @@ import br.com.charleston.doghero.domain.DefaultObserver
 import br.com.charleston.doghero.domain.interactor.GetMyHeroes
 import br.com.charleston.doghero.domain.model.DataHeroesModel
 import br.com.charleston.doghero.domain.model.HeroModel
-import br.com.charleston.doghero.features.heroes.adapters.HeroData
+import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import java.util.*
 import javax.inject.Inject
@@ -67,10 +67,20 @@ class HeroViewModel @Inject constructor(
     private fun transform(favorites: List<HeroModel>, heroType: HeroData.HeroType): List<HeroData> {
         val items: ArrayList<HeroData> = arrayListOf()
 
-        items.add(HeroData(null, heroType, HeroData.DataType.HEADER))
+        items.add(
+            HeroData(
+                null,
+                heroType,
+                HeroData.DataType.HEADER
+            )
+        )
 
         val mapped = favorites.map {
-            HeroData(it, heroType, HeroData.DataType.HERO)
+            HeroData(
+                it,
+                heroType,
+                HeroData.DataType.HERO
+            )
         }
 
         return items.apply {

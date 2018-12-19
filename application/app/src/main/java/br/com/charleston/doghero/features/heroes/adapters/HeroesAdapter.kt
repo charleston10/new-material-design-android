@@ -9,6 +9,7 @@ import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.RecyclerView
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.domain.model.HeroModel
+import br.com.charleston.doghero.features.heroes.data.HeroData
 
 class HeroesAdapter(
     private val context: Context,

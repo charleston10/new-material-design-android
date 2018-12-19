@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.core.base.BaseFragment
 import br.com.charleston.doghero.databinding.FragmentMyHeroesBinding
-import br.com.charleston.doghero.features.heroes.adapters.HeroData
+import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel

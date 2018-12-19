@@ -1,4 +1,4 @@
-package br.com.charleston.doghero.features.heroes.adapters
+package br.com.charleston.doghero.features.heroes.data
 
 import br.com.charleston.doghero.domain.model.HeroModel
 
