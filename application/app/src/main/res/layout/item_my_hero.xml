@@ -8,7 +8,7 @@
                   type="br.com.charleston.doghero.domain.model.HeroModel"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
             android:layout_marginTop="8dp"
             android:background="@color/white"
             android:padding="16dp"
@@ -17,24 +17,22 @@
 
         <ImageView
                 android:id="@+id/avatar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@mipmap/ic_launcher"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                app:imageUrl="@{hero.user.imageUrl}"
                 tools:srcCompat="@tools:sample/avatars"/>
 
         <LinearLayout
-                android:id="@+id/container_"
+                android:id="@+id/container_info"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/avatar"
-                android:layout_marginStart="8dp">
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/avatar">
 
             <TextView
                     android:id="@+id/name"
@@ -49,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{hero.addressNeighborhood}"
-                    tools:text="Vila Mariana"/>
+                    tools:text="Vila Mariana" android:layout_alignTop="@+id/container_info"/>
 
             <LinearLayout
                     android:gravity="start"
@@ -96,14 +94,13 @@
         </LinearLayout>
 
         <LinearLayout
+                android:layout_alignParentEnd="true"
                 android:id="@+id/container_price"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginTop="8dp">
 
             <ImageView
                     android:layout_gravity="center"
@@ -128,34 +125,32 @@
                     tools:text="por noite"/>
         </LinearLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+        <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/avatar"
+                android:id="@+id/container_buttons"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintGuide_begin="206dp"
-                android:id="@+id/guideline"/>
-        <Button
-                android:text="Conversar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/btn_talk"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/avatar"/>
+                android:weightSum="100">
 
-        <Button
-                android:text="Reservar de novo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/btn_reserve"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/avatar"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                    android:id="@+id/btn_talk"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_talk"
+                    android:layout_marginEnd="2dp"
+                    android:text="Conversar"/>
+
+            <Button
+                    android:layout_marginStart="2dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="40dp"
+                    android:id="@+id/btn_reserve"
+                    android:text="Reservar"
+                    android:background="@drawable/button_reserve"
+                    android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
 </layout>

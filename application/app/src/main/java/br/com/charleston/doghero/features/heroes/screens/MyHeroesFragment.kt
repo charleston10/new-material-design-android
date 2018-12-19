@@ -1,11 +1,9 @@
 package br.com.charleston.doghero.features.heroes.screens
 
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +15,7 @@ import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
 import com.google.android.material.snackbar.Snackbar
+
 
 class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() {
 
