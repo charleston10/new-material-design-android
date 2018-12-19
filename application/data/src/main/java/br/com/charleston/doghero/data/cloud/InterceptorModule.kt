@@ -15,7 +15,7 @@ class InterceptorModule {
     fun provideInterceptorResponse(): Interceptor {
         return Interceptor { chain ->
             val requestBuilder = chain.request().newBuilder()
-            requestBuilder.header("Content-Type", "application/json")
+            requestBuilder.header("Content-Type", "application/json; charset=utf-8")
             chain.proceed(requestBuilder.build())
         }
     }

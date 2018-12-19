@@ -15,16 +15,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
         <ImageView
                 android:id="@+id/avatar"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:src="@mipmap/ic_launcher"
                 android:layout_marginStart="8dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 app:imageUrl="@{hero.user.imageUrl}"
                 tools:srcCompat="@tools:sample/avatars"/>
+
+        <ImageView
+                android:id="@+id/badge"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/host_list_icon_badge"
+                android:layout_alignEnd="@id/avatar"
+                android:layout_alignBottom="@id/avatar"/>
 
         <LinearLayout
                 android:id="@+id/container_info"
@@ -40,14 +49,16 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{hero.user.firstName}"
-                    tools:text="Alex"/>
+                    tools:text="Alex"
+                    android:textSize="18sp"/>
 
             <TextView
                     android:id="@+id/stars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{hero.addressNeighborhood}"
-                    tools:text="Vila Mariana" android:layout_alignTop="@+id/container_info"/>
+                    android:textSize="14sp"
+                    tools:text="Vila Mariana"/>
 
             <LinearLayout
                     android:gravity="start"
@@ -106,8 +117,8 @@
                     android:layout_gravity="center"
                     android:visibility="@{hero.superHero ? View.VISIBLE : View.GONE}"
                     android:id="@+id/ic_heart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/icon_like_filled_vector_red"/>
 
             <TextView
@@ -116,6 +127,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{Double.toString(hero.price)}"
+                    android:textSize="16sp"
                     tools:text="R$ 108"/>
 
             <TextView
@@ -139,16 +151,18 @@
                     android:layout_weight="50"
                     android:layout_height="40dp"
                     android:background="@drawable/button_talk"
-                    android:layout_marginEnd="2dp"
-                    android:text="Conversar"/>
+                    android:layout_marginEnd="4dp"
+                    android:text="Conversar"
+                    android:textSize="14sp"/>
 
             <Button
-                    android:layout_marginStart="2dp"
+                    android:layout_marginStart="4dp"
                     android:layout_width="0dp"
                     android:layout_weight="50"
                     android:layout_height="40dp"
                     android:id="@+id/btn_reserve"
                     android:text="Reservar"
+                    android:textSize="14sp"
                     android:background="@drawable/button_reserve"
                     android:textColor="@color/white"/>
         </LinearLayout>
