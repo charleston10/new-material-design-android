@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.domain.model.HeroModel
 import br.com.charleston.doghero.features.heroes.data.HeroData
+import java.util.*
 
 class HeroesAdapter(
     private val context: Context,
-    private val items: List<HeroData>
+    private val items: ArrayList<HeroData>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -55,6 +56,12 @@ class HeroesAdapter(
         } else {
             TYPE_HERO
         }
+    }
+
+    fun updateAll(items: List<HeroData>) {
+        this.items.clear()
+        this.items.addAll(items)
+        notifyDataSetChanged()
     }
 
     inner class HeroesViewHolder(

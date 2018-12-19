@@ -3,7 +3,6 @@ package br.com.charleston.doghero.features.heroes.screens
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -11,16 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.core.base.BaseFragment
 import br.com.charleston.doghero.databinding.FragmentMyHeroesBinding
-import br.com.charleston.doghero.domain.model.HeroModel
 import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
 import br.com.charleston.doghero.features.heroes.adapters.LastSpaceItemDecoration
 import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
-import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() {
+
+    private var adapter: HeroesAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -79,10 +79,16 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
     }
 
     private fun bindItems(items: List<HeroData>) {
-        getViewDataBinding().listHeroes.apply {
-            adapter = HeroesAdapter(context, items)
-            layoutManager = LinearLayoutManager(context)
-            addItemDecoration(LastSpaceItemDecoration())
+        if (adapter == null) {
+            adapter = HeroesAdapter(context!!, ArrayList(items))
+
+            getViewDataBinding().listHeroes.apply {
+                adapter = this@MyHeroesFragment.adapter
+                layoutManager = LinearLayoutManager(context)
+                addItemDecoration(LastSpaceItemDecoration())
+            }
+        } else {
+            adapter?.updateAll(items)
         }
     }
 
