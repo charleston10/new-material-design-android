@@ -34,7 +34,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
     }
 
     private fun fetchData() {
-        getViewModel().input.showHeroes()
+        getViewModel().input.fetchHeroes()
     }
 
     private fun observerViewModel() {
@@ -63,7 +63,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
 
     private fun bindItems(items: List<HeroData>) {
         getViewDataBinding().listHeroes.apply {
-            adapter = HeroesAdapter(items)
+            adapter = HeroesAdapter(context, items)
             layoutManager = LinearLayoutManager(context)
         }
     }
@@ -79,7 +79,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
     private fun showError() {
         Snackbar.make(
             activity!!.findViewById(android.R.id.content),
-            "Falha ao obter dados\nTente novamente mais tarde.",
+            getString(R.string.my_heroes_error),
             Snackbar.LENGTH_LONG
         ).setActionTextColor(Color.RED).show()
     }

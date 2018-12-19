@@ -13,7 +13,7 @@ import java.util.*
 import javax.inject.Inject
 
 interface InputHeroViewModel {
-    fun showHeroes()
+    fun fetchHeroes()
 }
 
 interface OutputHeroViewModel {
@@ -38,7 +38,7 @@ class HeroViewModel @Inject constructor(
     private val heroesObservable = MutableLiveData<HeroState>()
     override val heroes: LiveData<HeroState> get() = heroesObservable
 
-    override fun showHeroes() {
+    override fun fetchHeroes() {
         getMyHeroes.execute(object : DefaultObserver<DataHeroesModel>() {
             override fun onStart() {
                 super.onStart()

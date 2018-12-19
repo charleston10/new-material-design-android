@@ -1,5 +1,6 @@
 package br.com.charleston.doghero.features.heroes.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -10,6 +11,7 @@ import br.com.charleston.doghero.R
 import br.com.charleston.doghero.domain.model.HeroModel
 
 class HeroesAdapter(
+    private val context: Context,
     private val items: List<HeroData>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -68,8 +70,8 @@ class HeroesAdapter(
 
         fun bind(type: HeroData.HeroType) {
             val title = when (type) {
-                HeroData.HeroType.RECENT -> "Heróis com que hospedei"
-                else -> "Heróis favoritos"
+                HeroData.HeroType.RECENT -> context.getString(R.string.item_hero_title_recent)
+                else -> context.getString(R.string.item_hero_title_favorites)
             }
             viewDataBinding.setVariable(BR.title, title)
             viewDataBinding.executePendingBindings()

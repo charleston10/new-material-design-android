@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DogHero</string>
+    <string name="item_hero_title_recent">Heróis com que hospedei</string>
+    <string name="item_hero_title_favorites">Heróis favoritos</string>
+    <string name="my_heroes_error">Falha ao obter dados. Tente novamente mais tarde.</string>
 </resources>
