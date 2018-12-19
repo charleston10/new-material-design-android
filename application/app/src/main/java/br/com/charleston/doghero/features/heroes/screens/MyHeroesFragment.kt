@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.core.base.BaseFragment
 import br.com.charleston.doghero.databinding.FragmentMyHeroesBinding
-import br.com.charleston.doghero.domain.model.DataHeroesModel
+import br.com.charleston.doghero.features.heroes.adapters.HeroData
+import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -59,8 +61,11 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
         }
     }
 
-    private fun bindItems(data: DataHeroesModel) {
-
+    private fun bindItems(items: List<HeroData>) {
+        getViewDataBinding().listHeroes.apply {
+            adapter = HeroesAdapter(items)
+            layoutManager = LinearLayoutManager(context)
+        }
     }
 
     private fun showLoading() {
