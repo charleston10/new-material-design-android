@@ -1,6 +1,5 @@
 package br.com.charleston.doghero.features.heroes.screens
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +14,6 @@ import br.com.charleston.doghero.features.heroes.adapters.LastSpaceItemDecoratio
 import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
-import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
 class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() {
@@ -59,11 +57,12 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
                 showLoading()
             }
             is HeroState.Success -> {
-                hideLoading()
+                showLoading(false)
+                showError(false)
                 bindItems(state.data)
             }
             is HeroState.Error -> {
-                hideLoading()
+                showLoading(false)
                 showError()
             }
         }
@@ -98,21 +97,12 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
         }
     }
 
-    private fun showLoading() {
-        getViewDataBinding().isLoading = true
-        getViewDataBinding().refreshLayout.isRefreshing = true
+    private fun showLoading(isLoading: Boolean = true) {
+        getViewDataBinding().isLoading = isLoading
+        getViewDataBinding().refreshLayout.isRefreshing = isLoading
     }
 
-    private fun hideLoading() {
-        getViewDataBinding().isLoading = false
-        getViewDataBinding().refreshLayout.isRefreshing = false
-    }
-
-    private fun showError() {
-        Snackbar.make(
-            activity!!.findViewById(android.R.id.content),
-            getString(R.string.my_heroes_error),
-            Snackbar.LENGTH_LONG
-        ).setActionTextColor(Color.RED).show()
+    private fun showError(isError: Boolean = true) {
+        getViewDataBinding().isError = isError
     }
 }

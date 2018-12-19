@@ -144,7 +144,8 @@
                 android:layout_height="wrap_content"
                 android:weightSum="100">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                    android:gravity="center"
                     android:id="@+id/btn_talk"
                     android:layout_width="0dp"
                     android:layout_weight="50"
@@ -154,7 +155,7 @@
                     android:text="@string/my_hero_btn_talk"
                     android:textSize="14sp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                     android:layout_marginStart="4dp"
                     android:layout_width="0dp"
                     android:layout_weight="50"
@@ -162,6 +163,7 @@
                     android:id="@+id/btn_reserve"
                     android:text="@string/my_hero_btn_reserve"
                     android:textSize="14sp"
+                    android:gravity="center"
                     android:background="@drawable/button_reserve"
                     android:textColor="@color/white"/>
         </LinearLayout>

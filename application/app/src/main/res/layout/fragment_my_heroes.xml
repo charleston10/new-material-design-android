@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <import type="android.view.View"/>
 
         <variable name="isLoading"
+                  type="java.lang.Boolean"/>
+
+        <variable name="isError"
                   type="java.lang.Boolean"/>
     </data>
 
@@ -17,9 +21,32 @@
                 android:background="@color/white"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="?attr/actionBarSize"/>
 
-        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+                android:visibility="@{isError ? View.VISIBLE : View.GONE}"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+            <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/bag_error"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"/>
+
+            <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_heroes_error"/>
+
+        </LinearLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:layout_below="@id/toolbar"
@@ -28,11 +55,11 @@
                 android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="@{(!isLoading &amp;&amp; !isError) ? View.VISIBLE : View.GONE}"
                     android:layout_marginTop="8dp"
                     android:id="@+id/list_heroes"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="@{!isLoading ? View.VISIBLE : View.GONE}"
                     tools:listitem="@layout/item_my_hero"/>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </RelativeLayout>

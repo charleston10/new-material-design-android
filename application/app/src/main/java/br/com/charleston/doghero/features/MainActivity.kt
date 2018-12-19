@@ -6,7 +6,8 @@ import br.com.charleston.doghero.core.base.BaseActivity
 import br.com.charleston.doghero.core.base.BaseViewModel
 import br.com.charleston.doghero.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity<ActivityMainBinding, BaseViewModel>(){
+
+class MainActivity : BaseActivity<ActivityMainBinding, BaseViewModel>() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main
