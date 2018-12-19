@@ -3,6 +3,7 @@ package br.com.charleston.doghero.features.heroes.screens
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -10,21 +11,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.charleston.doghero.R
 import br.com.charleston.doghero.core.base.BaseFragment
 import br.com.charleston.doghero.databinding.FragmentMyHeroesBinding
-import br.com.charleston.doghero.features.heroes.data.HeroData
+import br.com.charleston.doghero.domain.model.HeroModel
 import br.com.charleston.doghero.features.heroes.adapters.HeroesAdapter
+import br.com.charleston.doghero.features.heroes.data.HeroData
 import br.com.charleston.doghero.features.heroes.data.HeroState
 import br.com.charleston.doghero.features.heroes.viewmodel.HeroViewModel
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-
 
 class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindToolbar()
         observerViewModel()
-        fetchData()
+        bindToolbar()
         bindRefreshLayout()
+        fetchData()
     }
 
     override fun getLayoutId(): Int {
@@ -36,6 +38,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
             .of(this, viewModelFactory)
             .get(HeroViewModel::class.java)
     }
+
 
     private fun fetchData() {
         getViewModel().input.fetchHeroes()
@@ -67,7 +70,7 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
 
     private fun bindToolbar() {
         getViewDataBinding().toolbar.apply {
-            title = "Meus Heróis"
+            title = context.getString(R.string.my_heroes_title)
         }
 
         (activity as AppCompatActivity)
@@ -82,7 +85,9 @@ class MyHeroesFragment : BaseFragment<FragmentMyHeroesBinding, HeroViewModel>() 
     }
 
     private fun bindRefreshLayout() {
-        getViewDataBinding().refreshLayout.setOnRefreshListener { fetchData() }
+        getViewDataBinding().refreshLayout.setOnRefreshListener {
+            fetchData()
+        }
     }
 
     private fun showLoading() {

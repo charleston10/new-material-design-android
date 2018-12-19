@@ -3,6 +3,7 @@ package br.com.charleston.doghero.features.heroes.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
@@ -43,7 +44,9 @@ class HeroesAdapter(
         if (getItemViewType(position) == TYPE_HEADER) {
             (holder as HeaderViewHolder).bind(item.heroType)
         } else {
-            (holder as HeroesViewHolder).bind(item.hero!!)
+            val heroesHolder = (holder as HeroesViewHolder)
+            heroesHolder.bind(item.hero!!)
+            heroesHolder.bindFavorite(item.hero!!, position)
         }
     }
 
@@ -62,6 +65,14 @@ class HeroesAdapter(
         fun bind(data: HeroModel) {
             viewDataBinding.setVariable(BR.hero, data)
             viewDataBinding.executePendingBindings()
+        }
+
+        fun bindFavorite(data: HeroModel, position: Int) {
+            itemView.findViewById<ImageView>(R.id.favorite)
+                .setOnClickListener {
+                    data.isSuperHero = !data.isSuperHero
+                    notifyItemChanged(position)
+                }
         }
     }
 

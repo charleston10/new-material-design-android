@@ -12,7 +12,7 @@ class DataBindingAdapter {
 
     companion object {
         @JvmStatic
-        @BindingAdapter("app:imageUrl")
+        @BindingAdapter(value = ["url"], requireAll = false)
         fun setImageUrl(view: ImageView, url: String) {
             Glide
                 .with(view.context)
@@ -22,7 +22,7 @@ class DataBindingAdapter {
         }
 
         @JvmStatic
-        @BindingAdapter("app:currency")
+        @BindingAdapter(value = ["currency"], requireAll = false)
         fun formatCurrency(view: TextView, value: Double) {
             view.text = String.format(view.context.getString(R.string.my_hero_price), value.toInt())
         }

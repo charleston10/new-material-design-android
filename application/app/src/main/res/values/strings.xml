@@ -7,4 +7,6 @@
     <string name="my_hero_btn_reserve">Reservar</string>
     <string name="my_hero_stars">(415)</string>
     <string name="my_hero_price">R$ %d</string>
+    <string name="my_heroes_label_by_night">por noite</string>
+    <string name="my_heroes_title">Meus Heróis</string>
 </resources>
