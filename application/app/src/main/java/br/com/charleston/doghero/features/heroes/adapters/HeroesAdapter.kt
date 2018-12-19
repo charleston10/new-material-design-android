@@ -46,7 +46,6 @@ class HeroesAdapter(
         } else {
             val heroesHolder = (holder as HeroesViewHolder)
             heroesHolder.bind(item.hero!!)
-            heroesHolder.bindFavorite(item.hero!!, position)
         }
     }
 
@@ -65,14 +64,6 @@ class HeroesAdapter(
         fun bind(data: HeroModel) {
             viewDataBinding.setVariable(BR.hero, data)
             viewDataBinding.executePendingBindings()
-        }
-
-        fun bindFavorite(data: HeroModel, position: Int) {
-            itemView.findViewById<ImageView>(R.id.favorite)
-                .setOnClickListener {
-                    data.isSuperHero = !data.isSuperHero
-                    notifyItemChanged(position)
-                }
         }
     }
 
