@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
         <ImageView
                 android:id="@+id/avatar"
                 android:layout_width="64dp"
@@ -100,7 +99,7 @@
                         android:id="@+id/neighbor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="(415)"/>
+                        android:text="@string/my_hero_stars"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -126,8 +125,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="@{Double.toString(hero.price)}"
                     android:textSize="16sp"
+                    app:currency="@{hero.price}"
                     tools:text="R$ 108"/>
 
             <TextView
@@ -139,7 +138,7 @@
 
         <LinearLayout
                 android:layout_marginTop="16dp"
-                android:layout_below="@id/avatar"
+                android:layout_below="@id/container_info"
                 android:id="@+id/container_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,7 +151,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/button_talk"
                     android:layout_marginEnd="4dp"
-                    android:text="Conversar"
+                    android:text="@string/my_hero_btn_talk"
                     android:textSize="14sp"/>
 
             <Button
@@ -161,7 +160,7 @@
                     android:layout_weight="50"
                     android:layout_height="40dp"
                     android:id="@+id/btn_reserve"
-                    android:text="Reservar"
+                    android:text="@string/my_hero_btn_reserve"
                     android:textSize="14sp"
                     android:background="@drawable/button_reserve"
                     android:textColor="@color/white"/>

@@ -3,4 +3,8 @@
     <string name="item_hero_title_recent">Heróis com que hospedei</string>
     <string name="item_hero_title_favorites">Heróis favoritos</string>
     <string name="my_heroes_error">Falha ao obter dados. Tente novamente mais tarde.</string>
+    <string name="my_hero_btn_talk">Conversar</string>
+    <string name="my_hero_btn_reserve">Reservar</string>
+    <string name="my_hero_stars">(415)</string>
+    <string name="my_hero_price">R$ %d</string>
 </resources>
