@@ -8,4 +8,8 @@
     <color name="red_dog_fab">#D64070</color>
     <color name="white">#fff</color>
     <color name="background">#45AEAEAE</color>
+
+    <color name="primaryColorText">#212121</color>
+    <color name="secondColorText">#757575</color>
+    <color name="dividerColor">#BDBDBD</color>
 </resources>
