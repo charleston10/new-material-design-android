@@ -41,12 +41,12 @@ And it also handles error handling if there is any failure to process the reques
 
 **Screens**
 <table>
-  <th>List heroes</th>
-  <th>Error API</th>
-  <th> Final List</th>
+  <th>GIF</th>
+  <th>List</th>
+  <th>Error APIt</th>
 <tr>
   <td>
-   <img src="https://github.com/charleston10/dog-hero-android/blob/master/assets/screens/app.gif"/>
+    <img src="https://github.com/charleston10/dog-hero-android/blob/master/assets/screens/app.gif?raw=true" height="500" width="900"/>
   </td>
 <td>
    <img src="https://github.com/charleston10/dog-hero-android/blob/master/assets/screens/list.png?raw=true"/>
