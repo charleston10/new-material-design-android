@@ -16,7 +16,7 @@
         "first_name": "Maria",
         "image_url": "https://doghero-uploads.s3.amazonaws.com/uploads/photo/764186/sq135_20170404094603_345722_1491353162913.jpg"
       },
-      "address_neighborhood": "Aclimação",
+      "address_neighborhood": "Centro",
       "price": 60
     }
   ],
