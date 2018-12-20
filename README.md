@@ -6,7 +6,7 @@ This application only aims to show a list of items so that the user can see some
 
 And it also handles error handling if there is any failure to process the request made by the API.
 
-[DOWNLOAD](https://github.com/charleston10/dog-hero-android/blob/master/apk/app-dev-debug.apk) || [VIDEO](https://github.com/charleston10/dog-hero-android/blob/master/assets/video/device-2018-12-20-123845.mp4?raw=true)
+[DOWNLOAD](https://github.com/charleston10/dog-hero-android/blob/master/apk/app-dev-debug.apk?raw=true) || [VIDEO](https://github.com/charleston10/dog-hero-android/blob/master/assets/video/device-2018-12-20-123845.mp4?raw=true)
 
 <table>
   <thead>
