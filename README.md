@@ -43,7 +43,7 @@ And it also handles error handling if there is any failure to process the reques
 <table>
   <th>GIF</th>
   <th>List</th>
-  <th>Error APIt</th>
+  <th>Error API</th>
 <tr>
   <td>
     <img src="https://github.com/charleston10/dog-hero-android/blob/master/assets/screens/app.gif?raw=true" height="500" width="900"/>
