@@ -74,7 +74,7 @@ And it also handles error handling if there is any failure to process the reques
 
 *using guide Google JetPack*
 
-- Clean Archtecture
+- Clean Architecture
 
 *for apply DRY, KISS, SOLID*
 
