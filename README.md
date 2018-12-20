@@ -70,6 +70,12 @@ And it also handles error handling if there is any failure to process the reques
 </table>
 
 ## CODE
+- **IDE - Android Studio 3.3 Beta 4** 
+
+- **Gradle 3.2.1**
+
+- **Kotlin 1.3.0**
+
 - **AAC Android Architecture Components**
 
 *using guide Google JetPack*
