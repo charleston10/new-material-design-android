@@ -12,7 +12,7 @@ And it also handles error handling if there is any failure to process the reques
   <thead>
     <tr>
       <th>BASE</th>
-      <th>ARQUITETURA</th>
+      <th>Architecture</th>
       <th>IU</th>
     </tr>
   </thead>
@@ -70,7 +70,7 @@ And it also handles error handling if there is any failure to process the reques
 </table>
 
 ## Code
-- AAC Android Archtecture Components 
+- AAC Android Architecture Components 
 
 *using guide Google JetPack*
 
