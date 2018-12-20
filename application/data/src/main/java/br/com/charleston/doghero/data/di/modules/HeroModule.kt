@@ -17,7 +17,7 @@ class HeroModule {
     }
 
     @Provides
-    fun questionCloudDataStore(
+    fun cloudDataStore(
         heroesApi: HeroesApi,
         mapper: HeroCloudMapper
     ): HeroCloudDataStore {
@@ -25,7 +25,7 @@ class HeroModule {
     }
 
     @Provides
-    fun questionDataRepository(
+    fun dataRepository(
         cloud: HeroCloudDataStore
     ): IHeroRepository {
         return HeroDataRepository(cloud)
