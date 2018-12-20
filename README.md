@@ -108,7 +108,7 @@ And it also handles error handling if there is any failure to process the reques
 
  ## API
 
- `GET  https://raw.githubusercontent.com/charleston10/dog-hero-android/master/api/myheroes.txt`
+ GET  https://raw.githubusercontent.com/charleston10/dog-hero-android/master/api/myheroes.txt
 
  RESPONSE 200 ```{
   "recents": [
