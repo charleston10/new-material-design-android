@@ -51,7 +51,8 @@ ext {
             google     : [
                     gson           : "com.google.code.gson:gson:2.8.5",
                     measurementApi : "com.google.android.gms:play-services-measurement-api:16.0.3",
-                    measurementBase: "com.google.android.gms:play-services-measurement-base:16.0.4"
+                    measurementBase: "com.google.android.gms:play-services-measurement-base:16.0.4",
+                    material       : "com.google.android.material:material:1.1.0-alpha02"
             ],
             dagger     : [
                     daggerAndroid  : "com.google.dagger:dagger-android:${version.dagger}",
@@ -71,7 +72,9 @@ ext {
                     romandanylykViewPagerIndicator: "com.romandanylyk:pageindicatorview:1.0.2@aar",
                     webView                       : "com.github.hzw1199:AwesomeWebView-Android:1.2",
                     commons                       : "commons-io:commons-io:2.4",
-                    bottomSheet                   : "com.github.rubensousa:bottomsheetbuilder:1.6.1"
+                    bottomSheet                   : "com.github.rubensousa:bottomsheetbuilder:1.6.1",
+                    "lottie"                      : "com.airbnb.android:lottie:2.8.0"
+
             ],
             uiTest  : [
                     espressoCore  : "com.android.support.test.espresso:espresso-core:${version.espresso}",

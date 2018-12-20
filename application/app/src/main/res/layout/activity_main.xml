@@ -26,7 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Widget.Design.FloatingActionButton"
-                    android:backgroundTint="@color/red_dog"
+                    android:backgroundTint="@color/red_dog_fab"
                     app:srcCompat="@drawable/ic_add_white"
                     app:tint="@color/white"
                     app:layout_anchor="@id/bottom_app_bar"/>

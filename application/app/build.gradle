@@ -77,6 +77,7 @@ dependencies {
     implementation libCore.kotlin
     implementation libCore.billing
     implementation libCore.kodein
+    implementation libCore.google.material
 
     implementation libCore.monitoring.timber
 
@@ -99,8 +100,7 @@ dependencies {
 
     def lib = rootProject.ext.appDependencies
     implementation lib.external.glide
-    implementation 'com.google.android.material:material:1.1.0-alpha02'
-    implementation 'com.airbnb.android:lottie:2.8.0'
+    implementation lib.external.lottie
 
     /* tests */
     testImplementation lib.unitTest.kotlin
