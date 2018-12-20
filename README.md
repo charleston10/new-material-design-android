@@ -69,24 +69,24 @@ And it also handles error handling if there is any failure to process the reques
 </tr>
 </table>
 
-## Code
-- AAC Android Architecture Components 
+## CODE
+- **AAC Android Architecture Components**
 
 *using guide Google JetPack*
 
-- Clean Architecture
+- **Clean Architecture**
 
 *for apply DRY, KISS, SOLID*
 
-- DataBinding 
+- **DataBinding** 
 
 *bind data model with view*
 
-- ViewModel
+- **ViewModel**
 
  *for interact view with business rules*
  
- - RX
+ - **RX Android**
 
  *for manipulate data and events in different layers of application*
  
@@ -157,7 +157,7 @@ And it also handles error handling if there is any failure to process the reques
   ]
 }```
 
-## Design
+## DESIGN
 
 **Material Components**
 
