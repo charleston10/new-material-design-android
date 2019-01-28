@@ -1,4 +1,4 @@
-# New Material Design Android - Android
+# New Material Design - Android
 
 The project follows the entire line of Google's standard development, based on Jetpack.
 
